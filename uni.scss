@@ -1,0 +1,166 @@
+/**
+ * Copyright (c) 2013-Now http://aidex.vip All rights reserved.
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * 使用的时候，请将下面的一行复制到您的uniapp项目根目录的uni.scss中即可
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.my-scroll-view{
+	height: calc(100vh - 250rpx - 120rpx);
+}
+.get-code-btn{
+	border: 1px solid green;
+	background-color: #fff;
+	width: 100px;
+	font-size: 14px;
+	color: green;
+}
+.the-icon{
+	width: 60rpx;
+	height: 60rpx;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.comfirm-btn{
+	margin-top: 10px;
+	background-color: #009b4c;
+	color:#fff;
+	font-size: 32rpx;
+}
+// 字体
+.fz48{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 48rpx;
+}
+.fz40{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 40rpx;
+}
+.fz36{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 36rpx;
+}
+.fz32{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 32rpx;
+}
+.fz30{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 30rpx;
+}
+.fz28A700{
+	font-weight: 700;
+	font-style: normal;
+	font-size: 28rpx;
+	color: #AAA;
+}
+.fz28700{
+	font-weight: 700;
+	font-style: normal;
+	font-size: 28rpx;
+}
+.fz28A{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 28rpx;
+	color: #aaa;
+}
+.fz28{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 28rpx;
+}
+.fz267006{
+	font-weight: 700;
+	font-style: normal;
+	font-size: 26rpx;
+	color: #AAAAAA;
+}
+.fz267006{
+	font-weight: 700;
+	font-style: normal;
+	font-size: 26rpx;
+	color: #666;
+}
+.fz26700{
+	font-weight: 700;
+	font-style: normal;
+	font-size: 26rpx;
+}
+.fz26A{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 26rpx;
+	color: #AAAAAA;
+}
+.fz26{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 26rpx;
+}
+.fz24700{
+	font-weight: 700;
+	font-style: normal;
+	font-size: 26rpx;
+}
+.fz24A{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24rpx;
+	color: #AAA;
+}
+.fz24{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24rpx;
+}
+.fz22A{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 22rpx;
+	color: #AAAAAA;
+}
+.fz22{
+	font-weight: 400;
+	font-style: normal;
+	font-size: 22rpx;
+}
+
+$u-main-color: #303133;
+$u-content-color: #505256;
+$u-tips-color: #909399;
+$u-light-color: #c0c4cc;
+$u-border-color: #dedfe2;
+$u-bg-color: #f3f4f6;
+
+$u-type-primary: #2979ff;
+$u-type-primary-light: #ecf5ff;
+$u-type-primary-disabled: #a0cfff;
+$u-type-primary-dark: #2b85e4;
+
+$u-type-warning: #ff9900;
+$u-type-warning-disabled: #fcbd71;
+$u-type-warning-dark: #f29100;
+$u-type-warning-light: #fdf6ec;
+
+$u-type-success: #19be6b;
+$u-type-success-disabled: #71d5a1;
+$u-type-success-dark: #18b566;
+$u-type-success-light: #dbf1e1;
+
+$u-type-error: #fa3534;
+$u-type-error-disabled: #fab6b6;
+$u-type-error-dark: #dd6161;
+$u-type-error-light: #fef0f0;
+
+$u-type-info: #909399;
+$u-type-info-disabled: #c8c9cc;
+$u-type-info-dark: #82848a;
+$u-type-info-light: #f4f4f5;
+
+$u-form-item-height: 70rpx;
+$u-form-item-border-color: #dcdfe6;
