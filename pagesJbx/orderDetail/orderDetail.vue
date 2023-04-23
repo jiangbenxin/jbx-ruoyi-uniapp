@@ -2,7 +2,7 @@
 	<view>
 		<view>
 			<pageBar info="订单详情" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-			<scroll-view scroll-y="true" class="it-scroll-view">
+			<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 				<view class="header">
 						<image class="header-logo" src="/static/image/u25.png" mode=""></image>
 						<view class="header-main" >
@@ -130,6 +130,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				show:false,
 				list:[
 					{title:'商品金额',num:169},
@@ -173,9 +174,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.it-scroll-view{
-		height: 1200rpx;
-	}
 	.pop-title{
 		height: 80rpx;
 		text-align: center;

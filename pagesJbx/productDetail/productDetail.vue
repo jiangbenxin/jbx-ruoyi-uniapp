@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="商品详情" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-		<scroll-view scroll-y="true" style="height: 1200rpx;">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<view class="product-detail">
 				<u-swiper
 				        :list="list5"
@@ -124,6 +124,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				current:0,
 				buy:true,
 				productNum:1,

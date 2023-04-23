@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="兑换记录" backImageUrl="/static/image/u6.png" backTextColor="#fff" :navHeightValue="50" navBackgroundColor="#009b4c" titleColor="#fff"></pageBar>
-		<scroll-view scroll-y="true" class="it-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<myOrder :type.sync="type"></myOrder>
 		</scroll-view>
 	</view>
@@ -15,6 +15,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				type:0,
 			}
 		},
@@ -25,7 +26,4 @@
 </script>
 
 <style lang="scss" scoped>
-.it-scroll-view{
-	height: 1200rpx;
-}
 </style>

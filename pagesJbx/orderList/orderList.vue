@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="订单列表" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-		<scroll-view scroll-y="true" style="height: 1200rpx;">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<view class="search" >
 				<image class="search-img" src="/static/image/u25.png" mode=""></image> 
 				<input class="search-inp" type="text" placeholder="请输入手机号/订单号/姓名查询">
@@ -19,6 +19,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				type:0,
 			}
 		},

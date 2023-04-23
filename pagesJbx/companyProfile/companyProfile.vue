@@ -1,7 +1,7 @@
 <template>
 	<view class="wrapper">
 		<pageBar :info="page" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000" :fontSize="13"></pageBar>
-		<scroll-view scroll-y="true" class="my-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 120rpx)`}">
 			<view class="container">
 				<view>
 					<video 
@@ -31,6 +31,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				page:'团队介绍'
 			};
 		},
@@ -63,9 +64,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.my-scroll-view{
-		height:1200rpx;
-	}
 .container{
 	padding: 20rpx 40rpx;
 	.container-video{

@@ -4,8 +4,8 @@
 			<view class="left-item fz28A700" :style="{boxSizing: 'border-box',color:classification===index?letfItemStyleColor:'',borderLeft:classification===index?letfItemStyleBorder:'',width:classification===index?letfItemStyleWidth:''}" v-for="(item,index) in list" @tap="checkClassification(index)">
 				{{item.title}}
 			</view>
-		</view>
-		<scroll-view scroll-y="true" class="the-scroll-view">
+		</view>	
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 120rpx)`}">
 			<view class="classification-info">
 				<image class="classification-img" src="/static/image/u25.png" mode=""></image>
 				<view class="classification-item" v-for="(item,index) in list3">
@@ -32,6 +32,7 @@
 	export default {
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				selected:1,
 				classification:0,
 				list:[
@@ -130,10 +131,7 @@
 	.classification{
 		position: relative;
 		text-align: right;
-		.the-scroll-view{
-			width: 600rpx;
-			margin-left: 160rpx;
-		}
+
 		.classifications{
 			// z-index: 999;
 			height: 1400rpx;

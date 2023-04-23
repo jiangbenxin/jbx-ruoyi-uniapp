@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="积分商城" backImageUrl="/static/image/u6.png" backTextColor="#fff" :navHeightValue="50" navBackgroundColor="#009b4c" titleColor="#fff"></pageBar>
-			<scroll-view scroll-y="true" style="height: 1200rpx;">
+			<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 				<search></search>
 				<view class="container" >
 					<view class="container-product" v-for="(item,index) in 10" @tap="productDetail(index)">
@@ -27,7 +27,7 @@
 		},
 		data() {
 			return {
-				
+				theScrollerHeight:getApp().globalData.navHeight,
 			}
 		},
 		methods: {

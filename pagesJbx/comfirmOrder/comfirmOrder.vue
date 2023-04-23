@@ -1,7 +1,7 @@
 <template>
 	<view class="wrapper">
 		<pageBar info="确认订单" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000" :fontSize="13"></pageBar>
-		<scroll-view scroll-y="true" class="my-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 120rpx)`}">
 			<view class="header">
 				<view class="header-red-border">
 				</view>
@@ -133,6 +133,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				cheap:false,
 				show:false,
 				checked:'0',

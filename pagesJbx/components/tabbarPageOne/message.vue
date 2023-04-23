@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<scroll-view scroll-y="true" class="my-scroll-view" >
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 120rpx)`}">
 			<view v-for="item in list" class="message" @tap="orderDetail()">
 				<image class="left" src="/static/image/u25.png" mode=""></image>
 				<view class="center">
@@ -30,13 +30,13 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				selected:1,
 				status: 'loadmore',
                 loadingText: '正在加载',
                 loadmoreText: '轻轻上拉',
                 nomoreText: '实在没有了',
 				list:[1,2,3,4,5,6,7,8,9,5,6,7,8,9,0],
-				
 			}
 		},
 		methods:{
@@ -49,7 +49,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.message{
 		display: flex;
 		background-color: #fff;

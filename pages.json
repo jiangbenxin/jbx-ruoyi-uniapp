@@ -226,8 +226,7 @@
 						"enablePullDownRefresh": false,
 						"navigationBarBackgroundColor": "#009b4c",
 						"navigationBarTextStyle": "white",
-						"navigationStyle":"custom",
-						"disableScroll": true
+						"navigationStyle":"custom"
 					}
 				}
 		        ,{

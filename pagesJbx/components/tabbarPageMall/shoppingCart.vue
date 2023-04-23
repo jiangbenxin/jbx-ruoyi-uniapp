@@ -8,7 +8,7 @@
 				删除（{{deleteNum}}）
 			</view>
 		</view>
-		<scroll-view scroll-y="true" class="it-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 300rpx)`}">
 			<view class="products">
 				<view class="product" v-for="(item,index) in list">
 						<radio class="product-radio" @tap="checked(index)" value="" :checked="item.checked"/><text></text>
@@ -49,6 +49,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				selected:2,
 				value:{num:2},
 				allChecked:false,
@@ -124,9 +125,6 @@
 	height: 60rpx;
 	align-items: center;
 	padding:20rpx;
-}
-.it-scroll-view{
-	height: 840rpx;
 }
 .footer{
 	border-bottom: 4rpx solid #e4e4e4;

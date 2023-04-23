@@ -67,6 +67,9 @@
 				<image class="help-img" src="/static/image/u96.png" mode=""></image>
 			</view>
 		</view>
+		<view style="height: 120rpx;">
+			
+		</view>
 	</view>
 </template>
 

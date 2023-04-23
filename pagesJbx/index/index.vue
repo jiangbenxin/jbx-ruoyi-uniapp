@@ -6,9 +6,7 @@
 			<tabbarOneMessage v-if="selected===1"  :onReachBottom.sync="onReachBottom"></tabbarOneMessage>
 			<tabbarOneMy v-if="selected===2"></tabbarOneMy>
 		</view>
-		<view style="height: 120rpx;">
 			<tabBar :selected.sync="selected"  :tabbarType='0'></tabBar>
-		</view>
     </view>
 </template>
 
@@ -67,11 +65,4 @@
 </script>
 
 <style lang="scss" scoped>
-	.wrapper{
-		display: flex;
-		flex-direction: column;
-		.container{
-			flex: 1;
-		}
-	}
 </style>

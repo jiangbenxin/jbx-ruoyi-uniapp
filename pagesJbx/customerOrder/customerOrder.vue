@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="客户订单" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-		<scroll-view scroll-y="true" class="it-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<view class="container" v-for="(item,index) in list">
 				<view class="container-header fz24">
 					<view class="container-header-info1">
@@ -47,6 +47,7 @@
 	export default {
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				list:[
 					{orderNumber:1561561591561,status:0,date:'2022-11-20',nick:'客户昵称',product:[
 						{imgSrc:'/static/image/u25.png',productName:'产品名称',num:4,price:169},{imgSrc:'/static/image/u25.png',productName:'产品名称',num:4,price:169},],allPrice:0,allNum:3},
@@ -70,9 +71,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.it-scroll-view{
-		height: 1200rpx;
-	}
 	.container{
 		border-radius: 30rpx;
 		background-color: #fff;

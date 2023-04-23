@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="我的评价" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-		<scroll-view scroll-y="true" style="height: 1200rpx;">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<view class="order-tab">
 				<view class="tab-item fz32" :style="{color:type==index?'#009b4c':''}" v-for="(item,index) in tabList" @tap="checkTab(index)">
 					{{item.title}}
@@ -45,6 +45,7 @@
 	export default {
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				type:0,
 				tabList:[
 					{title:'全部评价'},

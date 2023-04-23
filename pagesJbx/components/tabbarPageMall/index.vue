@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<scroll-view scroll-y="true" class="my-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 120rpx)`}">
 			<search></search>
 			<view class="" >
 				<u-swiper
@@ -81,6 +81,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				current:0,
 				show: this.$store.state.qualificationPeriod,
 				selected:0,

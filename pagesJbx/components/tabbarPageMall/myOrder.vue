@@ -1,6 +1,6 @@
 <template>
 	<view class="wrapper">
-		<scroll-view scroll-y="true" class="my-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 120rpx)`}">
 			<view class="container">
 				<view class="person-message">
 						<image class="avatar" src="/static/image/u25.png" mode=""></image>
@@ -36,6 +36,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				type:0,
 				selected:3,
 				list:[

@@ -1,7 +1,7 @@
 <template>
 	<view class="wrapper">
 		<pageBar :info="type==='0'?'我的收藏':'浏览历史'" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000" :edit="true" :isEdit.sync="isEdit"></pageBar>
-		<scroll-view scroll-y="true" :class="[isEdit?'height1080':'height1200']">
+		<scroll-view scroll-y="true" :style="{height: theHeight}">
 			<view class="container" v-for="(item,index) in list">
 				<view class="date">
 					今天
@@ -43,6 +43,7 @@
 		},
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				allChecked:false,
 				type:'1',
 				isEdit:false,
@@ -69,6 +70,11 @@
 		onLoad(options) {
 			this.type = options.type
 			console.log(options.type);
+		},
+		computed:{
+			theHeight(){
+				return !this.isEdit?`calc(100vh - ${this.theScrollerHeight}rpx)`:`calc(100vh - ${this.theScrollerHeight}rpx - 120rpx)`
+			}
 		},
 		watch: {
 		    list: {
@@ -119,12 +125,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.height1080{
-		height: 1080rpx;
-	}
-	.height1200{
-		height: 1080rpx;
-	}
 	.all-checked{
 		width: 100%;
 		height: 120rpx;

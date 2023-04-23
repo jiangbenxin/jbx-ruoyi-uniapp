@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="产品列表" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-		<scroll-view scroll-y="true" class="it-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<view class="search" >
 				<image class="search-img" src="/static/image/u25.png" mode=""></image> 
 				<input class="search-inp" type="text" placeholder="请输入商品名称查询">
@@ -49,6 +49,7 @@
 	export default {
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				switchTab:0,
 				list:[
 					{title:'默认'},

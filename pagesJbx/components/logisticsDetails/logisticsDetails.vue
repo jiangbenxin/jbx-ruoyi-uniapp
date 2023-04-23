@@ -5,7 +5,7 @@
 				<view class="pop-title">
 					圆通物流
 				</view>
-				<scroll-view scroll-y="true" class="my-scroll-view">
+				<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx - 320rpx)`}">
 					<view class="logistics-msg">
 						<view class="logistics-left">
 							<view class="date fz26"  v-for="(item,index) in list3">
@@ -38,6 +38,7 @@
 		name:"logisticsDetails",
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				list3:[
 					{date:'11-20  10:20',message:' 这里面是物流信息，，这里面是物流信息，，这里面是物流信息，，这里面是物流信息，，这里面是物流信息'},
 					{date:'11-20  10:20',message:' 这里面是物流信息，，这里面是物流信息，，这里面是物流信息，，这里面是物流信息，，这里面是物流信息'},

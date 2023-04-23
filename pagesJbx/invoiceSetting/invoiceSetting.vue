@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pageBar info="发票设置" :navHeightValue="50" navBackgroundColor="#fff" titleColor="#000"></pageBar>
-		<scroll-view scroll-y="true" class="it-scroll-view">
+		<scroll-view scroll-y="true" :style="{height: `calc(100vh - ${theScrollerHeight}rpx)`}">
 			<view class="header fz26">
 				<text class="require">*</text>
 				<text>
@@ -110,6 +110,7 @@
 	export default {
 		data() {
 			return {
+				theScrollerHeight:getApp().globalData.navHeight,
 				checked:true,
 				checked2:true,
 				list:[
@@ -125,9 +126,6 @@
 </script>
 
 <style lang="scss" scoped>
-	.it-scroll-view{
-		height: 1200rpx;
-	}
 	.pcs{
 		margin-left: 10rpx;
 		font-size: 24rpx;

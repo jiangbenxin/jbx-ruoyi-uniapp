@@ -74,7 +74,7 @@
 </template>
  
 <script>
-	const app = getApp()
+	// const app = getApp()
 	import {systemInfo} from './system-info.js'
 	export default {
 		name: "HeadView",
@@ -190,13 +190,20 @@
 		},
 		data() {
 			return {
-				statusBarHeight: app.globalData?.statusBarHeight, //状态栏高度
-				navHeight: app.globalData?.navHeight, //头部导航栏总体高度
-				navigationBarHeight: app.globalData?.navigationBarHeight, //导航栏高度
-				customHeight: app.globalData?.customHeight, //胶囊高度
-				scaleFactor: app.globalData?.scaleFactor, //比例系数
-				menubarLeft: app.globalData?.menubarLeft, //胶囊定位的左边left
-				windowWidth: app.globalData?.windowWidth * app.globalData?.scaleFactor
+				// statusBarHeight: null, //状态栏高度
+				// navHeight: null, //头部导航栏总体高度
+				// navigationBarHeight: app?.globalData?.navigationBarHeight||0, //导航栏高度
+				// customHeight: app?.globalData?.customHeight||0, //胶囊高度
+				// scaleFactor: app?.globalData?.scaleFactor||0, //比例系数
+				// menubarLeft: app?.globalData?.menubarLeft||0, //胶囊定位的左边left
+				// windowWidth: app?.globalData?.windowWidth ||0 * app?.globalData?.scaleFactor||0
+				statusBarHeight: 1, //状态栏高度
+				navHeight: 1, //头部导航栏总体高度
+				navigationBarHeight: 1, //导航栏高度
+				customHeight: 1, //胶囊高度
+				scaleFactor: 1, //比例系数
+				menubarLeft: 1, //胶囊定位的左边left
+				windowWidth: 1
 			};
 		},
 		methods: {
@@ -209,6 +216,8 @@
 				this.$emit('update:isEdit',!this.isEdit)
 			}
 		},
+		onLoad() {
+		},
 		created() {
 			/* 获取设备信息 */
 			const SystemInfomations = systemInfo()
@@ -216,12 +225,14 @@
 			this.statusBarHeight = SystemInfomations?.statusBarHeight //状态栏高度
 			this.scaleFactor = SystemInfomations?.scaleFactor||1 //比例系数
 			this.windowWidth = SystemInfomations?.windowWidth //当前设备的屏幕宽度
+			getApp().theScrollerHeight(this.navHeightValue * 2 )
 			/* 微信小程序平台 */
 			// #ifdef MP-WEIXIN
 			this.navHeight = SystemInfomations?.navHeight + SystemInfomations?.statusBarHeight //头部导航栏总高度
 			this.navigationBarHeight = SystemInfomations?.navHeight //头部导航栏高度
 			this.customHeight = SystemInfomations?.menuButtonHeight //胶囊高度
 			this.menubarLeft = SystemInfomations?.menuButtonLeft //胶囊左边界距离左上角的距离
+			getApp().theScrollerHeight(this.navHeight)
 			// #endif
 			
 		}
@@ -363,11 +374,8 @@
 		overflow: hidden;
 		text-align: center;
 		padding-right: 50rpx;
-		padding-bottom: 110rpx;
-		font-weight: 400;
+		padding-bottom: 80rpx;
 		font-style: normal;
-		font-size: 32rpx;
-		color: #FFFFFF;
 	}
  
 	/* #endif */
